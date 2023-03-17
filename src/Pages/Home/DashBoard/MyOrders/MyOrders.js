@@ -47,7 +47,7 @@ const MyOrders = () => {
                          
                          <TableCell align="left">Products Name</TableCell>
                          <TableCell align="right">Price</TableCell>
-                         <TableCell align="center">Action</TableCell>
+                         <TableCell align="center">Cancel</TableCell>
                          
                          </TableRow>
                     </TableHead>

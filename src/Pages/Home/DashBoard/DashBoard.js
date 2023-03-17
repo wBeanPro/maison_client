@@ -16,6 +16,7 @@ import RecentActorsIcon from '@mui/icons-material/RecentActors';
 import LogoutIcon from '@mui/icons-material/Logout';
 import useAuth from '../../../hooks/useAuth';
 import PaidIcon from '@mui/icons-material/Paid';
+import HouseIcon from '@mui/icons-material/House';
 
 
 const drawerWidth = 240;
@@ -42,6 +43,12 @@ function DashBoard(props) {
      <div className="logodivider">
      <button onClick={logOut} className="dash-btn" ><LogoutIcon/>  Log Out</button>
     
+     <Link className="text-decoration-none" to="/">
+        <button className="dash-btn">
+          <HouseIcon className="me-2"/> Go to home
+        </button>
+      </Link>
+      <br />
      <Link className="text-decoration-none" to="myOrders">
         <button className="dash-btn">
           <ProductionQuantityLimitsIcon className="me-2"/> My Orders

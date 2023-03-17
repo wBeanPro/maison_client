@@ -1,0 +1,20 @@
+.logodivider {
+     margin-top: 100px;
+}
+
+span.logoMaison.fs-3 {
+     margin-left: 12px;
+     color: #1a1a1b;
+     margin-top: 10px;
+     font-weight: 600;
+ }
+
+.dash-btn {
+     border: none;
+     margin: 14px 6px;
+     padding: 4px 34px;
+     outline: none;
+     background: #1a1a1b;
+     color: #fff;
+     border-radius: 8px;
+}

@@ -3,6 +3,10 @@ import { BrowserRouter, Routes, Route} from 'react-router-dom';
 import './App.css';
 import AuthProvider from './Pages/AuthProvider/AuthProvider';
 import DashBoard from './Pages/Home/DashBoard/DashBoard';
+import MyOrders from './Pages/Home/DashBoard/MyOrders/MyOrders';
+import Payment from './Pages/Home/DashBoard/Payment/Payment';
+import UserReviews from './Pages/Home/DashBoard/UserReviews/UserReviews';
+import UsersReview from './Pages/Home/DashBoard/UsersReview/UsersReview';
 import Home from './Pages/Home/Home/Home';
 import ProductDetails from './Pages/Home/ProductDetails/ProductDetails';
 import Shop from './Pages/Home/Shop/Shop';
@@ -10,6 +14,7 @@ import Login from './Pages/Login/Login/Login';
 import Register from './Pages/Login/Register/Register';
 import PageNotFound from './Pages/Shared/NotFound/PageNotFound';
 import TopBar from './Pages/Shared/TopBar/TopBar';
+
 
 function App() {
   return (
@@ -23,7 +28,14 @@ function App() {
           <Route path="shop/:id" element={<ProductDetails/>} />
           <Route path="login" element={<Login/>} />
           <Route path="register" element={<Register />} />
-          <Route path="dashBoard" element={<DashBoard/>}></Route>
+
+          <Route path="dashBoard" element={<DashBoard/>}>
+            <Route path="myOrders" element={<MyOrders/>} />
+            <Route path="usersReview" element={<UsersReview/>} />
+            <Route path="payment" element={<Payment/>} />
+            <Route path="userReviews" element={<UserReviews/>} />
+          </Route>
+
           <Route path="*" element={<PageNotFound />}/>
         </Routes>
       </BrowserRouter>

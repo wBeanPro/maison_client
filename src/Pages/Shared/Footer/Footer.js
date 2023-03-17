@@ -20,7 +20,7 @@ const Footer = () => {
                <div className="row-wrapper">
                <div className="container mb-5">
                     <div className="row text-center mb-5 ">
-                         <div className="col-lg-4 col-md-12 col-12">
+                         <div className="col-lg-4 col-md-6 col-12">
                          <div>
                              <h6 className="bef_cls">CONTACT</h6>     
                          </div>
@@ -33,7 +33,7 @@ const Footer = () => {
                               <p className="location-info">PO Box CT16122 Collins Street West, Victoria 8007, Australia.</p>
                          </div>
                          </div>
-                         <div className="col-lg-4 col-md-12 col-12">
+                         <div className="col-lg-4 col-md-6 col-12">
                          <div>
                               <img src={logoFooter} alt="" /> 
                               <h5 className="text-logo">MAISON COMMERCIAL</h5>    
@@ -50,7 +50,7 @@ const Footer = () => {
                               <p className="we-text">We are Sunrise team - a team of enthusiastic business service holder</p>
                          </div>
                          </div>
-                         <div className="col-lg-4 col-md-12 col-12">
+                         <div className="col-lg-4 col-md-6 col-12">
                          <div>
                             <p className="bef_cls">STAY IN TOUCH</p>  
                          </div>

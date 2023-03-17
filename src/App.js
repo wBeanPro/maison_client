@@ -18,6 +18,7 @@ import Register from './Pages/Login/Register/Register';
 import PageNotFound from './Pages/Shared/NotFound/PageNotFound';
 import TopBar from './Pages/Shared/TopBar/TopBar';
 import PrivateRoute from './Pages/PrivateRoute/PrivateRoute';
+import Footer from './Pages/Shared/Footer/Footer';
 
 
 function App() {
@@ -49,6 +50,7 @@ function App() {
 
           <Route path="*" element={<PageNotFound />}/>
         </Routes>
+        <Footer/>
       </BrowserRouter>
       </AuthProvider>
     </div>

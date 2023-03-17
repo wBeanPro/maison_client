@@ -8,6 +8,7 @@ const useFirebase = () =>{
      const [user, setUser] = useState({});
      const [isLoading, setIsLoading] = useState(true);
      const [authError, setAuthError] = useState('');
+     const [admin, setAdmin] = useState(false)
 
 
      const auth = getAuth();
@@ -23,6 +24,8 @@ const useFirebase = () =>{
               const newUser = {email, displayName:name}
               setUser(newUser)
               
+              //SAVED USER IN DATABASE
+              saveUser(email, name, 'POST')
               //Send name to firebase 
               updateProfile(auth.currentUser, {
                displayName: name
@@ -67,7 +70,8 @@ const useFirebase = () =>{
           .then((result) => {
                
                const user = result.user;
-               
+               //SAVED DATA IN DATABASE
+               saveUser(user.email, user.displayName, 'PUT')
                const destination = location?.state?.from || '/';
                navigate(destination)
                setAuthError('');
@@ -104,6 +108,29 @@ const useFirebase = () =>{
         },[])
 
 
+           //SAVE USER TO DATABASE
+           const saveUser = (email, displayName, method) =>{
+               const user ={email, displayName}
+               fetch('http://localhost:5000/users',{
+                    method: method,
+                    headers:{
+                         'content-type':'application/json'
+                    },
+                    body: JSON.stringify(user)
+               })
+               .then(res => res.json())
+               .then(data => console.log(data))
+
+          }
+
+          //ADMIN CONDITIONAL DATALOAD
+          useEffect( ()=>{
+               fetch(`http://localhost:5000/users/${user.email}`)
+               .then(res => res.json())
+               .then(data => setAdmin(data.admin))
+          },[user.email])
+
+
         return{
           user,
           isLoading,
@@ -111,6 +138,7 @@ const useFirebase = () =>{
           registerUser,
           loginUser,
           logOut,
+          admin,
           googleUserSignIn
 
      }

@@ -2,12 +2,14 @@
 import { BrowserRouter, Routes, Route} from 'react-router-dom';
 import './App.css';
 import AuthProvider from './Pages/AuthProvider/AuthProvider';
+import AddProducts from './Pages/Home/AddProducts/AddProducts';
 import DashBoard from './Pages/Home/DashBoard/DashBoard';
 import MyOrders from './Pages/Home/DashBoard/MyOrders/MyOrders';
 import Payment from './Pages/Home/DashBoard/Payment/Payment';
 import UserReviews from './Pages/Home/DashBoard/UserReviews/UserReviews';
 import UsersReview from './Pages/Home/DashBoard/UsersReview/UsersReview';
 import Home from './Pages/Home/Home/Home';
+import MakeAdmin from './Pages/Home/MakeAdmin/MakeAdmin';
 import ProductDetails from './Pages/Home/ProductDetails/ProductDetails';
 import Shop from './Pages/Home/Shop/Shop';
 import Login from './Pages/Login/Login/Login';
@@ -34,6 +36,8 @@ function App() {
             <Route path="usersReview" element={<UsersReview/>} />
             <Route path="payment" element={<Payment/>} />
             <Route path="userReviews" element={<UserReviews/>} />
+            <Route path="makeAdmin" element={<MakeAdmin/>} />
+            <Route path="addProducts" element={<AddProducts/>} />
           </Route>
 
           <Route path="*" element={<PageNotFound />}/>

@@ -17,13 +17,14 @@ import LogoutIcon from '@mui/icons-material/Logout';
 import useAuth from '../../../hooks/useAuth';
 import PaidIcon from '@mui/icons-material/Paid';
 import HouseIcon from '@mui/icons-material/House';
+import HowToRegIcon from '@mui/icons-material/HowToReg';
 
 
 const drawerWidth = 240;
 
 function DashBoard(props) {
 
-  const {logOut} = useAuth()
+  const {logOut, admin} = useAuth()
 
   const { window } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
@@ -49,6 +50,8 @@ function DashBoard(props) {
         </button>
       </Link>
       <br />
+     
+     {!admin ? <Box>
      <Link className="text-decoration-none" to="myOrders">
         <button className="dash-btn">
           <ProductionQuantityLimitsIcon className="me-2"/> My Orders
@@ -66,6 +69,21 @@ function DashBoard(props) {
       <RecentActorsIcon className="me-2"/>  Users Review
       </button>
       </Link>
+     </Box>
+      :
+    <Box>
+      <Link className="text-decoration-none" to="makeAdmin">
+      <button className="dash-btn">
+      <HowToRegIcon className="me-2"/>  Make Admin
+      </button>
+      </Link>
+      <Link className="text-decoration-none" to="addProducts">
+      <button className="dash-btn">
+      <HowToRegIcon className="me-2"/> Add Products
+      </button>
+      </Link>
+    </Box>}
+    
      </div>
      
     </div>
@@ -83,7 +101,7 @@ function DashBoard(props) {
           ml: { sm: `${drawerWidth}px` },
         }}
       >
-        <Toolbar sx={{backgroundColor:"#EBEBEB"}}>
+        <Toolbar sx={{backgroundColor:"#fff"}}>
           <IconButton
             color="inherit"
             aria-label="open drawer"

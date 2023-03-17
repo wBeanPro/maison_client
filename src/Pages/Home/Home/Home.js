@@ -1,10 +1,11 @@
 import React from 'react';
+import HeroCarosel from '../HeroCarousel/HeroCarosel';
 
 
 const Home = () => {
      return (
           <div>
-               <h1>This is Home Page</h1>
+               <HeroCarosel/>
           </div>
      );
 };

@@ -1,6 +1,7 @@
 
 import { BrowserRouter, Routes, Route} from 'react-router-dom';
 import './App.css';
+import AuthProvider from './Pages/AuthProvider/AuthProvider';
 import DashBoard from './Pages/Home/DashBoard/DashBoard';
 import Home from './Pages/Home/Home/Home';
 import Shop from './Pages/Home/Shop/Shop';
@@ -11,7 +12,8 @@ import TopBar from './Pages/Shared/TopBar/TopBar';
 
 function App() {
   return (
-    <div className="">
+    <div>
+      <AuthProvider>
       <BrowserRouter>
       <TopBar/>
         <Routes>
@@ -23,6 +25,7 @@ function App() {
           <Route path="*" element={<PageNotFound />}/>
         </Routes>
       </BrowserRouter>
+      </AuthProvider>
     </div>
   );
 }

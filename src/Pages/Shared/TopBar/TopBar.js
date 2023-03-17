@@ -1,14 +1,24 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './TopBar.css';
 import topLogo from '../../../Images/logotop.jpg'
 import { Link } from 'react-router-dom';
-import { Container, Nav, Navbar, NavDropdown } from 'react-bootstrap';
+import { Container, Nav, Navbar } from 'react-bootstrap';
+import useAuth from '../../../hooks/useAuth';
+import { Button } from '@mui/material';
+import Aos from "aos";
+import "aos/dist/aos.css";
 
 const TopBar = () => {
+  const {user, logOut} = useAuth()
+
+    useEffect(()=>{
+      Aos.init({duration: 2000})
+    },[])
+
      return (
-          <Navbar collapseOnSelect expand="lg" className="my-3" bg="#fff" variant="light">
+          <Navbar data-aos="fade-down" collapseOnSelect expand="lg" className="my-3" bg="#fff" variant="light">
           <Container>
-          <Navbar.Brand as={Link} to="" className="d-flex">
+          <Navbar.Brand as={Link} to="/" className="d-flex">
           <img
           src={topLogo}
           width="30"
@@ -23,7 +33,10 @@ const TopBar = () => {
                 <Nav.Link as={Link} className="link-text" to="/">Home</Nav.Link>
                 <Nav.Link as={Link} className="link-text" to="shop">Shop</Nav.Link>
                 <Nav.Link as={Link} className="link-text" to="dashBoard">Dash Board</Nav.Link>
-                <Nav.Link as={Link} className="link-text" to="login">Login</Nav.Link>
+                {user.email ?
+                  <Button onClick={logOut} variant="inherit" className="link-text"> Logout </Button>
+                 :
+                <Nav.Link as={Link} className="link-text" to="login">Login</Nav.Link>}
                 
               </Nav>
             </Navbar.Collapse>

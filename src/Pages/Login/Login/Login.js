@@ -1,15 +1,19 @@
 import { Container, Grid, Typography ,  TextField, Button, CircularProgress, Alert } from '@mui/material';
 import { Box } from '@mui/system';
 import React, { useState } from 'react';
-import { NavLink, useLocation, useHistory } from 'react-router-dom';
+import { NavLink, useLocation, useNavigate } from 'react-router-dom';
+import useFirebase from '../../../hooks/useFirebase';
 import loginImg from '../../../Images/loginImg.png';
 
 
 
 const Login = () => {
 
-     
+     const {loginUser, googleUserSignIn, user, isLoading,
+          authError} = useFirebase()
 
+     const location = useLocation()
+     const navigate = useNavigate()
    
      const [loginData, setLoginData] = useState({})
 
@@ -23,13 +27,14 @@ const Login = () => {
      }
      const handleLoginSubmit = e =>{
 
-     
+          loginUser(loginData.email, loginData.password, location,navigate)
+          e.preventDefault();
           
      }
 
      //Google handler
      const handleGoogleSignIn = () =>{
-          
+          googleUserSignIn(location, navigate)
      }
 
 
@@ -46,7 +51,7 @@ const Login = () => {
                PLEASE LOGIN 
           </Typography>
           
-           <form onSubmit={handleLoginSubmit}>
+          {!isLoading && <form onSubmit={handleLoginSubmit}>
           <TextField 
           required
           sx={{width:"75%", mt:5}}
@@ -68,7 +73,7 @@ const Login = () => {
           variant="standard" />
           <br />
           <Button sx={{width:"75%", mt:5, background:'#fff', color:'#585C5F', fontWeight:'bold'}} variant="contained" color="inherit" type="submit">Login</Button>
-          </form>
+          </form>}
 
           <NavLink style={{textDecoration:'none'}} to="/register">
           <Button  variant="text" sx={{color:'#585C5F', mt:2
@@ -77,6 +82,9 @@ const Login = () => {
 
           <Button className="btn-submit" onClick={handleGoogleSignIn} sx={{width:"75%", mt:5, fontWeight:'bold',background:'#fff', color:'#585C5F'}} variant="contained" color="inherit" type="submit">Google Login</Button>
 
+          {isLoading && <CircularProgress />}
+         {user?.email && <Alert severity="success">This is a success alert — check it out!</Alert>}
+         { authError && <Alert severity="error">{authError}</Alert>}
          
           </Box>
           </Grid>

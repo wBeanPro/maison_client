@@ -2,14 +2,16 @@ import { Container, Grid, Typography ,  TextField, Button, CircularProgress, Ale
 import { Box } from '@mui/system';
 import React, { useState } from 'react';
 import { NavLink , useNavigate} from 'react-router-dom';
+import useFirebase from '../../../hooks/useFirebase';
 import loginImg from '../../../Images/loginImg.png';
 
 
 
 const Register = () => {
 
-     
+     const {registerUser, isLoading, authError, user } = useFirebase()
      const navigate = useNavigate() 
+
      const [loginData, setLoginData] = useState({})
 
      const handleChange = e =>{
@@ -27,7 +29,7 @@ const Register = () => {
                return
           }
 
-         
+          registerUser(loginData.email, loginData.password, loginData.name, navigate)
           e.preventDefault();
           
      }
@@ -45,7 +47,7 @@ const Register = () => {
                PLEASE REGISTER
           </Typography>
           
-          <form onSubmit={handleLoginSubmit}>
+          {!isLoading &&<form onSubmit={handleLoginSubmit}>
           <TextField 
           required
           sx={{width:"75%", mt:3}}
@@ -85,12 +87,15 @@ const Register = () => {
           variant="standard" />
           <br />
           <Button sx={{width:"75%", mt:5, background:'#fff', color:'#585C5F', fontWeight:'bold'}} variant="contained" color="inherit" type="submit">Register</Button>
-          </form>
+          </form>}
 
           <NavLink style={{textDecoration:'none'}} to="/login">
           <Button  variant="text" sx={{color:'#585C5F', mt:2}}>Already have an account? login</Button>
           </NavLink>
 
+          {isLoading && <CircularProgress />}
+         {user?.email && <Alert severity="success">This is a success alert — check it out!</Alert>}
+         { authError && <Alert severity="error">{authError}</Alert>}
          
 
           </Box>

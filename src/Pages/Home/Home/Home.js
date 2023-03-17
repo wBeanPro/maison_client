@@ -1,5 +1,6 @@
 import React from 'react';
-import Footer from '../../Shared/Footer/Footer';
+import ContactFeatures from '../ContactFeatures/ContactFeatures';
+import EmailContact from '../EmailContact/EmailContact';
 import Featurs from '../Featurs/Featurs';
 import HeroCarosel from '../HeroCarousel/HeroCarosel';
 import MidBanner from '../MidBanner/MidBanner';
@@ -14,7 +15,10 @@ const Home = () => {
                <Featurs/>
                <Shop/>
                <MidBanner/>
+               <ContactFeatures/>
                <Reviews/>
+               <EmailContact/>
+               
                
           </div>
      );

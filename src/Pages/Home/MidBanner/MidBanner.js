@@ -24,7 +24,7 @@ const MidBanner = () => {
                          </div>  
                          </div>
                          <div className="col-lg-6 col-md-6 col-12">
-                           <img src={ChairLogo} alt="" />  
+                           <img width="100%" src={ChairLogo} alt="" />  
                          </div>
                     </div>
                </div>

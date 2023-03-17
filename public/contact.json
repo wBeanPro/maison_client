@@ -1,0 +1,27 @@
+[
+
+     {
+          "id":"1",
+          "title":"FREE SHIPPING",
+          "img":"https://i.ibb.co/GxXZF4D/shipping.png",
+          "text":"Free shipping on all US order"
+     },
+     {
+          "id":"",
+          "title":"ONLINE SUPPORT",
+          "img":"https://i.ibb.co/FbVPdSW/online.png",
+          "text":"Support online 24 hours a day"
+     },
+     {
+          "id":"3",
+          "title":"MONEY RETURN",
+          "img":"https://i.ibb.co/6s3mMDx/money.png",
+          "text":"Back guarantee under 7 days"
+     },
+     {
+          "id":"4",
+          "title":"MEMBER DISCOUNT",
+          "img":"https://i.ibb.co/x7W47kn/member.png",
+          "text":"Onevery order over $120.00"
+     }
+]

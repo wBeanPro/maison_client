@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route} from 'react-router-dom';
 import './App.css';
 import AuthProvider from './Pages/AuthProvider/AuthProvider';
 import AddProducts from './Pages/Home/AddProducts/AddProducts';
+import EmailContact from './Pages/Home/EmailContact/EmailContact';
 import ManageProducts from './Pages/Home/ManageProducts/ManageProducts';
 import DashBoard from './Pages/Home/DashBoard/DashBoard';
 import MyOrders from './Pages/Home/DashBoard/MyOrders/MyOrders';
@@ -47,7 +48,7 @@ function App() {
             <Route path="addProducts" element={<AddProducts/>} />
             <Route path="manageProducts" element={<ManageProducts/>} />
           </Route>
-
+          <Route path="emailContact" element={<EmailContact/>} />
           <Route path="*" element={<PageNotFound />}/>
         </Routes>
         <Footer/>

@@ -54,11 +54,7 @@ function DashBoard(props) {
       <br />
      
      {!admin ? <Box>
-     <Link className="text-decoration-none" to="myOrders">
-        <button className="dash-btn">
-          <ProductionQuantityLimitsIcon className="me-2"/> My Orders
-        </button>
-      </Link>
+     
      <Link className="text-decoration-none" to="myOrders">
         <button className="dash-btn">
           <ProductionQuantityLimitsIcon className="me-2"/> My Orders

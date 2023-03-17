@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './Footer.css';
 import footerImage from '../../../Images/footerBottom.jpg';
 import logoFooter from '../../../Images/logotop.jpg';
+import Aos from "aos";
+import "aos/dist/aos.css";
 
 const Footer = () => {
 
@@ -15,8 +17,12 @@ const Footer = () => {
          
      }
 
+     useEffect(()=>{
+          Aos.init({duration: 2000})
+        },[])
+
      return (
-          <div className="footerArea" style={footerBanner}>
+          <div data-aos="fade-bottom" className="footerArea" style={footerBanner}>
                <div className="row-wrapper">
                <div className="container mb-5">
                     <div className="row text-center mb-5 ">

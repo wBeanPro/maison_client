@@ -1,0 +1,38 @@
+h4.contact-text {
+     font-family: 'Poppins';
+     font-weight: 600;
+     margin-bottom: 50px;
+ }
+ 
+ input#name {
+     padding: 6px 18px;
+     margin-bottom: 20px;
+ }
+ 
+ input#subject {
+     padding: 6px 18px;
+     margin-bottom: 20px;
+ }
+ 
+ input#email {
+     padding: 6px 18px;
+     margin-bottom: 20px;
+ }
+ 
+ textarea#message {
+     margin-left: -2px;
+ }
+ 
+ button.default-btn.submit-btn {
+      color: #fff;
+      outline: none;
+      border: none;
+      background: #1a1a1b;
+      padding: 6px 20px;
+      font-family: 'Poppins';
+     }
+
+.mapbox-email{
+     background: #F5F5F5;
+     padding: 10px 0;
+}

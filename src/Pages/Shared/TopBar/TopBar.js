@@ -1,28 +1,34 @@
 import React from 'react';
 import './TopBar.css';
 import topLogo from '../../../Images/logotop.jpg'
+import { Link } from 'react-router-dom';
+import { Container, Nav, Navbar, NavDropdown } from 'react-bootstrap';
 
 const TopBar = () => {
      return (
-          <nav className="navbar navbar-expand-lg navbar-light bg-light">
-          <div className="container">
-          <a className="navbar-brand" href="#">Navbar</a>
-          <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-               <span className="navbar-toggler-icon"></span>
-          </button>
-          <div className="collapse navbar-collapse" id="navbarSupportedContent">
-               <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
-               <li className="nav-item">
-                    <a className="nav-link active" aria-current="page" href="#">Home</a>
-               </li>
-               <li className="nav-item">
-                    <a className="nav-link" href="#">Link</a>
-               </li>
-               </ul>
-               
-          </div>
-          </div>
-          </nav>
+          <Navbar collapseOnSelect expand="lg" className="my-3" bg="#fff" variant="light">
+          <Container>
+          <Navbar.Brand as={Link} to="" className="d-flex">
+          <img
+          src={topLogo}
+          width="30"
+          height="30"
+          className="d-inline-block align-top"
+          alt=""
+          /> <h3 className="ms-2">Maison</h3>
+          </Navbar.Brand>
+            <Navbar.Toggle aria-controls="basic-navbar-nav" />
+            <Navbar.Collapse id="basic-navbar-nav">
+              <Nav className="ms-auto">
+                <Nav.Link as={Link} className="link-text" to="/">Home</Nav.Link>
+                <Nav.Link as={Link} className="link-text" to="shop">Shop</Nav.Link>
+                <Nav.Link as={Link} className="link-text" to="dashBoard">Dash Board</Nav.Link>
+                <Nav.Link as={Link} className="link-text" to="login">Login</Nav.Link>
+                
+              </Nav>
+            </Navbar.Collapse>
+          </Container>
+        </Navbar>
      );
 };
 

@@ -1,10 +1,10 @@
 import React from 'react';
-import TopBar from '../../Shared/TopBar/TopBar';
+
 
 const Home = () => {
      return (
           <div>
-              <TopBar/> 
+               <h1>This is Home Page</h1>
           </div>
      );
 };

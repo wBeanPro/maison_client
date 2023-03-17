@@ -5,6 +5,7 @@ import hero3 from '../../../sliderProduct/slider3.jpg';
 import './HeroCarousel.css';
 import Aos from "aos";
 import "aos/dist/aos.css";
+import { Link } from 'react-router-dom';
 
 const HeroCarosel = () => {
      useEffect(()=>{
@@ -33,7 +34,7 @@ const HeroCarosel = () => {
                     <h1 className="sub-title">COLLECTION</h1>
                     <h1 className="main-title">NEED DAILY PRODUCTS</h1>
                     <p className="para-text">Here your's every days valuable products with money back guarantee just buy some products with justify</p>
-                    <button className="shop-btn">SHOP NOW</button>
+                    <Link to="shop"><button className="shop-btn">SHOP NOW</button></Link>
                </div>
               </div>
          </div>

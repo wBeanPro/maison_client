@@ -1,0 +1,25 @@
+.book-btn{
+     border: none;
+     padding: 10px 14px;
+     font-family: 'Poppins';
+     font-size: 12px;
+     font-weight: 600;
+}
+.book-section{
+     margin-top: -24px;
+}
+.icon-shop{
+     
+    font-size: 16px;
+    margin-right: 4px;
+
+}
+.icon-shop:hover{
+     transform: rotate(30deg);
+     transition: linear .3s;
+}
+.book-btn:hover{
+     background: #1a1a1b;
+     color: #fff;
+     transition: linear .3s;
+}

@@ -4,6 +4,7 @@ import './App.css';
 import AuthProvider from './Pages/AuthProvider/AuthProvider';
 import DashBoard from './Pages/Home/DashBoard/DashBoard';
 import Home from './Pages/Home/Home/Home';
+import ProductDetails from './Pages/Home/ProductDetails/ProductDetails';
 import Shop from './Pages/Home/Shop/Shop';
 import Login from './Pages/Login/Login/Login';
 import Register from './Pages/Login/Register/Register';
@@ -19,6 +20,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="shop" element={<Shop />} />
+          <Route path="shop/:id" element={<ProductDetails/>} />
           <Route path="login" element={<Login/>} />
           <Route path="register" element={<Register />} />
           <Route path="dashBoard" element={<DashBoard/>}></Route>

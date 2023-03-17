@@ -21,7 +21,7 @@ const SingleShop = ({product}) => {
                </div>
                <div className="book-section">
                <Link to={`shop/${_id}`}>
-               <button className="book-btn"><i className="fas icon-shop fa-dolly"></i> BOOK NOW</button>
+               <button className="book-btn"><i className="fas icon-shop fa-dolly"></i> BUY NOW</button>
                </Link>
                </div>
                </div>

@@ -9,7 +9,7 @@ const MyOrders = () => {
      const [orders, setOrders] = useState([]);
      
      useEffect( ()=>{
-     const url = `http://localhost:5000/addOrders?email=${user.email}`
+     const url = `https://fierce-fortress-23524.herokuapp.com/addOrders?email=${user.email}`
 
      fetch(url)
      .then(res => res.json())
@@ -20,7 +20,7 @@ const MyOrders = () => {
      const handleDelete = id => {
           const proceed = window.confirm("Are you sure to delete this one")
           if(proceed){
-               const url = `http://localhost:5000/addOrders/${id}`
+               const url = `https://fierce-fortress-23524.herokuapp.com/addOrders/${id}`
           fetch(url,{
                method:'DELETE'
           })

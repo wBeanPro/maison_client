@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route} from 'react-router-dom';
 import './App.css';
 import AuthProvider from './Pages/AuthProvider/AuthProvider';
 import AddProducts from './Pages/Home/AddProducts/AddProducts';
+import ManageProducts from './Pages/Home/ManageProducts/ManageProducts';
 import DashBoard from './Pages/Home/DashBoard/DashBoard';
 import MyOrders from './Pages/Home/DashBoard/MyOrders/MyOrders';
 import Payment from './Pages/Home/DashBoard/Payment/Payment';
@@ -16,6 +17,7 @@ import Login from './Pages/Login/Login/Login';
 import Register from './Pages/Login/Register/Register';
 import PageNotFound from './Pages/Shared/NotFound/PageNotFound';
 import TopBar from './Pages/Shared/TopBar/TopBar';
+import PrivateRoute from './Pages/PrivateRoute/PrivateRoute';
 
 
 function App() {
@@ -27,7 +29,11 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="shop" element={<Shop />} />
-          <Route path="shop/:id" element={<ProductDetails/>} />
+          <Route path="shop/:id" element={
+            <PrivateRoute>
+              <ProductDetails/>
+            </PrivateRoute>
+          } />
           <Route path="login" element={<Login/>} />
           <Route path="register" element={<Register />} />
 
@@ -38,6 +44,7 @@ function App() {
             <Route path="userReviews" element={<UserReviews/>} />
             <Route path="makeAdmin" element={<MakeAdmin/>} />
             <Route path="addProducts" element={<AddProducts/>} />
+            <Route path="manageProducts" element={<ManageProducts/>} />
           </Route>
 
           <Route path="*" element={<PageNotFound />}/>

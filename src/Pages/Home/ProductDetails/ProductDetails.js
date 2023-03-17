@@ -13,7 +13,7 @@ const ProductDetails = () => {
      const [singleProduct, setSingleProduct] = useState({})
 
      useEffect( ()=>{
-         const url = `http://localhost:5000/products/${id}`
+         const url = `https://fierce-fortress-23524.herokuapp.com/products/${id}`
          fetch(url)
          .then( res => res.json())
          .then (data => setSingleProduct(data))
@@ -27,7 +27,7 @@ const ProductDetails = () => {
      const onSubmit = data =>{
            data.email = user?.email;
           
-           fetch("http://localhost:5000/addOrders", {
+           fetch("https://fierce-fortress-23524.herokuapp.com/addOrders", {
                method: "POST",
                headers: { "content-type": "application/json" },
                body: JSON.stringify(data),

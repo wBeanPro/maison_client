@@ -32,7 +32,7 @@ const TopBar = () => {
               <Nav className="ms-auto">
                 <Nav.Link as={Link} className="link-text" to="/">Home</Nav.Link>
                 <Nav.Link as={Link} className="link-text" to="shop">Shop</Nav.Link>
-                <Nav.Link as={Link} className="link-text" to="dashBoard">Dash Board</Nav.Link>
+                {user.email && <Nav.Link as={Link} className="link-text" to="dashBoard">Dash Board</Nav.Link>}
                 {user.email ?
                   <Button onClick={logOut} variant="inherit" className="link-text"> Logout </Button>
                  :

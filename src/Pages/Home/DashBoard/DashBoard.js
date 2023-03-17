@@ -18,6 +18,8 @@ import useAuth from '../../../hooks/useAuth';
 import PaidIcon from '@mui/icons-material/Paid';
 import HouseIcon from '@mui/icons-material/House';
 import HowToRegIcon from '@mui/icons-material/HowToReg';
+import DashboardCustomizeIcon from '@mui/icons-material/DashboardCustomize';
+import NoteAltIcon from '@mui/icons-material/NoteAlt';
 
 
 const drawerWidth = 240;
@@ -57,6 +59,11 @@ function DashBoard(props) {
           <ProductionQuantityLimitsIcon className="me-2"/> My Orders
         </button>
       </Link>
+     <Link className="text-decoration-none" to="myOrders">
+        <button className="dash-btn">
+          <ProductionQuantityLimitsIcon className="me-2"/> My Orders
+        </button>
+      </Link>
       <br />
       <Link className="text-decoration-none" to="payment">
         <button className="dash-btn">
@@ -79,7 +86,12 @@ function DashBoard(props) {
       </Link>
       <Link className="text-decoration-none" to="addProducts">
       <button className="dash-btn">
-      <HowToRegIcon className="me-2"/> Add Products
+      <DashboardCustomizeIcon className="me-2"/> Add Products
+      </button>
+      </Link>
+      <Link className="text-decoration-none" to="manageProducts">
+      <button className="dash-btn">
+      <NoteAltIcon className="me-2"/>Manage Products
       </button>
       </Link>
     </Box>}

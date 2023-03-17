@@ -1,4 +1,5 @@
 import React from 'react';
+import Footer from '../../Shared/Footer/Footer';
 import Featurs from '../Featurs/Featurs';
 import HeroCarosel from '../HeroCarousel/HeroCarosel';
 import Reviews from '../Reviews/Reviews';
@@ -12,6 +13,7 @@ const Home = () => {
                <Featurs/>
                <Shop/>
                <Reviews/>
+               <Footer/>
           </div>
      );
 };
